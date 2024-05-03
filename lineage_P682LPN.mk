@@ -1,6 +1,3 @@
-# Call device.mk (shared between CM/LineageOS & AOSP)
-$(call inherit-product, device/itel/P682LPN/device.mk)
-
 # Call tablet config
 $(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
 
