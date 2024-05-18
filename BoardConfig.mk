@@ -1,2 +1,1 @@
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/recovery.fstab
-BOARD_SUPPRESS_EMMC_WIPE := true
+BUILD_BROKEN_DUP_RULES := true
