@@ -20,6 +20,9 @@ AB_OTA_PARTITIONS += \
     product
 BOARD_USES_RECOVERY_AS_BOOT := true
 
+# Allow broken rules
+BUILD_BROKEN_DUP_RULES := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
