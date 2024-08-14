@@ -8,7 +8,16 @@ DEVICE_PATH := device/itel/P682LPN
 
 # A/B
 AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS +=
+AB_OTA_PARTITIONS += \
+    vbmeta \
+    vbmeta_system \
+    vbmeta_vendor \
+    dtbo \
+    boot \
+    system \
+    system_ext \
+    vendor \
+    product
 BOARD_USES_RECOVERY_AS_BOOT := true
 
 # Architecture
