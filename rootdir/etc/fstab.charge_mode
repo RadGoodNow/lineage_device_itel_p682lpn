@@ -1,0 +1,1 @@
+/dev/block/by-name/cache     /cache     ext4     noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc     wait,check

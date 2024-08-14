@@ -1,0 +1,10 @@
+# Wi-Fi
+ro.wifi.channels=
+
+# Miscellaneous
+net.bt.name=Android
+persist.sys.timezone=Africa/Brazzaville
+persist.vendor.dualapp.support=no
+ro.prebuilt.path=system/etc/transsion_prebuilt/
+transsion.device.name=itel Vision 3 Plus
+
