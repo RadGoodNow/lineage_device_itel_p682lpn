@@ -7,13 +7,24 @@
 DEVICE_PATH := device/itel/P682LPN
 
 # A/B
+BOARD_USES_RECOVERY_AS_BOOT := true
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
-    vbmeta
-BOARD_USES_RECOVERY_AS_BOOT := true
+    vbmeta \
+    vbmeta_system \
+    vbmeta_vendor \
+    dtbo \
+    boot \
+    system \
+    system_ext \
+    vendor \
+    product
 
-# Allow broken rules
+
+# Allow broken rules & missing dependecies
+ALLOW_MISSING_DEPENDENCIES := true
 BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -40,7 +51,7 @@ TARGET_SCREEN_DENSITY := 320
 # Kernel
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8
+BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8 androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_KERNEL_IMAGE_NAME := Image
@@ -66,7 +77,7 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_DTBOIMG_PARTITION_SIZE := 8388608
 BOARD_SUPER_PARTITION_SIZE := 9126805504 # TODO: Fix hardcoded value
 BOARD_SUPER_PARTITION_GROUPS := itel_dynamic_partitions
-BOARD_ITEL_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor
+BOARD_ITEL_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext vendor product
 BOARD_ITEL_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 
 # Platform
@@ -89,7 +100,7 @@ VENDOR_SECURITY_PATCH := 2022-04-05
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
-BOARD_AVB_VBMETA_SYSTEM := system
+BOARD_AVB_VBMETA_SYSTEM := system system_ext product
 BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
