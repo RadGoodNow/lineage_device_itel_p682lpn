@@ -21,7 +21,7 @@ AB_OTA_PARTITIONS += \
     product
 
 
-# Allow broken rules & missing dependecies
+# Allow broken rules & missing dependencies
 ALLOW_MISSING_DEPENDENCIES := true
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
