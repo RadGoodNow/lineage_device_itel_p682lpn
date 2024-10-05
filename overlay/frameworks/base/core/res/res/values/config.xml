@@ -40,11 +40,37 @@
         <item>0:2:15</item>
     </string-array>
 
+	<!-- IMS -->
+    <string name="config_ims_package" translatableds="false">com.spreadtrum.ims</string>
+    <string name="config_wlan_network_service_package" translatable="false">com.spreadtrum.ims</string>
+    <bool name="config_dynamic_bind_ims">true</bool>
+    <bool name="config_device_volte_available">true</bool>
+
+    <!-- Flag specifying whether VoLTE should be available for carrier: independent of
+         carrier provisioning. If false: hard disabled. If true: then depends on carrier
+         provisioning, availability etc -->
+    <bool name="config_carrier_volte_available">true</bool>
+
+    <!-- Flag specifying whether VoLTE availability is based on provisioning -->
+    <bool name="config_carrier_volte_provisioned">true</bool>
+
+    <!-- Flag specifying whether VoLTE TTY is supported -->
+    <bool name="config_carrier_volte_tty_supported">false</bool>
+
+    <!-- Flag specifying whether VT is available on device -->
+    <bool name="config_device_vt_available">true</bool>
+
+    <!-- Flag specifying whether VT should be available for carrier: independent of
+         carrier provisioning. If false: hard disabled. If true: then depends on carrier
+         provisioning, availability etc -->
+    <bool name="config_carrier_vt_available">true</bool>
+	
+	<!-- Color modes -->
     <array name="config_availableColorModes">
         <!-- ColorDisplayManager.COLOR_MODE_NATURAL -->
         <item>0</item>
         <!-- ColorDisplayManager.COLOR_MODE_BOOSTED -->
-        <item>1</item>
+        <!-- <item>1</item> --> <!--causes wrong color temperature-->
         <!-- ColorDisplayManager.COLOR_MODE_SATURATED -->
         <item>2</item>
         <!-- ColorDisplayManager.COLOR_MODE_AUTOMATIC -->
