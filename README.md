@@ -7,3 +7,4 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 ```
+Status: LineageOS is not booting/wasn't tested yet.
