@@ -24,18 +24,51 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
 
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.allocator@1.0 \
+    android.hidl.base@1.0.vendor \
+    android.hidl.allocator@1.0.vendor \
+    libhidltransport \
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor
+
 # API levels
 PRODUCT_SHIPPING_API_LEVEL := 30
+
+# vndk
+PRODUCT_PACKAGES +=\
+    vndk_package
 
 # fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl-mock \
     fastbootd
 
+# RenderScript HAL
+PRODUCT_PACKAGES += \
+     android.hardware.renderscript@1.0-impl
+
+#add USB vts service
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.1-service
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service
+
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.mapper@2.0-impl-2.1 \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-service
+
+PRODUCT_PACKAGES += \
+        NfcNci
 
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
@@ -46,6 +79,41 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # Product characteristics
 PRODUCT_CHARACTERISTICS := default
 
+#default audio
+PRODUCT_PACKAGES += \
+    audio.a2dp.default \
+    audio.usb.default \
+    audio.r_submix.default
+
+PRODUCT_PACKAGES += \
+    audio.primary.default \
+    local_time.default \
+    vibrator.default \
+    power.default
+
+# sensor
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-service \
+    android.hardware.sensors@1.0-impl
+
+# Vibrator HAL
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-service \
+    android.hardware.vibrator@1.0-impl
+
+#audio hidl hal impl
+PRODUCT_PACKAGES += \
+    android.hardware.audio@5.0-impl \
+    android.hardware.audio.effect@5.0-impl \
+    android.hardware.broadcastradio@1.0-impl \
+    android.hardware.soundtrigger@2.0-impl \
+    android.hardware.audio@2.0-service
+
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service
+
 # Rootdir
 PRODUCT_PACKAGES += \
     log_to_csv.sh \
@@ -55,68 +123,17 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     fstab.charge_mode \
-    init.P681LM.rc \
-    init.P681LM.usb.rc \
-    init.P682LP.rc \
-    init.P682LP.usb.rc \
     init.P682LPN.rc \
     init.P682LPN.usb.rc \
-    init.S661L.rc \
-    init.S661L.usb.rc \
     init.cali.rc \
     init.factorytest.rc \
     init.ram.rc \
     init.stnfc.rc \
     init.storage.rc \
-    init.ums9230_14c10.rc \
-    init.ums9230_14c10.usb.rc \
-    init.ums9230_1h10.rc \
-    init.ums9230_1h10.usb.rc \
-    init.ums9230_1h10_go.rc \
-    init.ums9230_1h10_go.usb.rc \
-    init.ums9230_3h10.rc \
-    init.ums9230_3h10.usb.rc \
-    init.ums9230_3h10_go.rc \
-    init.ums9230_3h10_go.usb.rc \
-    init.ums9230_4h10.rc \
-    init.ums9230_4h10.usb.rc \
-    init.ums9230_4h10_go.rc \
-    init.ums9230_4h10_go.usb.rc \
-    init.ums9230_haps.rc \
-    init.ums9230_haps.usb.rc \
-    init.ums9230_haps_flash.rc \
-    init.ums9230_haps_flash.usb.rc \
-    init.ums9230_zebu.rc \
-    init.ums9230_zebu.usb.rc \
-    init.recovery.P681LM.rc \
-    init.recovery.P682LP.rc \
     init.recovery.P682LPN.rc \
-    init.recovery.S661L.rc \
     init.recovery.common.rc \
-    init.recovery.ums9230_14c10.rc \
-    init.recovery.ums9230_1h10.rc \
-    init.recovery.ums9230_1h10_go.rc \
-    init.recovery.ums9230_3h10.rc \
-    init.recovery.ums9230_3h10_go.rc \
-    init.recovery.ums9230_4h10.rc \
-    init.recovery.ums9230_4h10_go.rc \
-    init.recovery.ums9230_haps.rc \
-    init.recovery.ums9230_haps_flash.rc \
-    init.recovery.ums9230_zebu.rc \
-    ueventd.P681LM.rc \
-    ueventd.P682LP.rc \
-    ueventd.P682LPN.rc \
-    ueventd.S661L.rc \
-    ueventd.ums9230_14c10.rc \
-    ueventd.ums9230_1h10.rc \
-    ueventd.ums9230_1h10_go.rc \
-    ueventd.ums9230_3h10.rc \
-    ueventd.ums9230_3h10_go.rc \
-    ueventd.ums9230_4h10.rc \
-    ueventd.ums9230_4h10_go.rc \
-    ueventd.ums9230_haps.rc \
-    ueventd.ums9230_haps_flash.rc \
-    ueventd.ums9230_zebu.rc \
+    ueventd.P682LPN.rc 
+
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.charge_mode:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.charge_mode
