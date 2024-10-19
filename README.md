@@ -8,3 +8,4 @@
 #
 ```
 Status: LineageOS is not booting/wasn't tested yet.
+        LineageOS Recovery is working.

@@ -25,6 +25,11 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
 
+# libhealthd
+PRODUCT_PACKAGES += \
+    libhealthd.ums9230
+    libhealthd
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
@@ -38,7 +43,7 @@ PRODUCT_PACKAGES += \
 
 # API levels
 PRODUCT_SHIPPING_API_LEVEL := 30
-
+PRODUCT_TARGET_VNDK_VERSION := 30
 # vndk
 PRODUCT_PACKAGES +=\
     vndk_package
@@ -140,7 +145,7 @@ PRODUCT_PACKAGES += \
 
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.charge_mode:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.charge_mode
+    $(LOCAL_PATH)/rootdir/etc/fstab.charge_mode:$(TARGET_ROOT_OUT)/first_stage_ramdisk/fstab.charge_mode
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
