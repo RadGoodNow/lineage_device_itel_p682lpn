@@ -27,7 +27,7 @@ PRODUCT_PACKAGES += \
 
 # libhealthd
 PRODUCT_PACKAGES += \
-    libhealthd.ums9230
+    libhealthd.ums9230 \
     libhealthd
 
 # HIDL
