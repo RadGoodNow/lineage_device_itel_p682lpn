@@ -142,11 +142,11 @@ PRODUCT_PACKAGES += \
     init.recovery.P682LPN.rc \
     init.recovery.common.rc \
     ueventd.P682LPN.rc \
-    fstab.P682LPN.first_stage_ramdisk
 
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.charge_mode:$(TARGET_ROOT_OUT)/first_stage_ramdisk/fstab.charge_mode
+    $(LOCAL_PATH)/rootdir/system/etc/fstab.charge_mode:$(TARGET_ROOT_OUT)/first_stage_ramdisk/fstab.charge_mode \
+    $(LOCAL_PATH)/rootdir/system/etc/fstab.P682LPN.first_stage_ramdisk:$(TARGET_ROOT_OUT)/first_stage_ramdisk/fstab.P682LPN
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
