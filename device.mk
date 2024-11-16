@@ -141,7 +141,8 @@ PRODUCT_PACKAGES += \
     init.storage.rc \
     init.recovery.P682LPN.rc \
     init.recovery.common.rc \
-    ueventd.P682LPN.rc 
+    ueventd.P682LPN.rc \
+    fstab.P682LPN.first_stage_ramdisk
 
 
 PRODUCT_COPY_FILES += \

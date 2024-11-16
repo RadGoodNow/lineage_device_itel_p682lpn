@@ -7,80 +7,80 @@
 // Init scripts
 sh_binary {
     name: "log_to_csv.sh",
-    src: "bin/log_to_csv.sh",
+    src: "system/bin/log_to_csv.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "loading.sh",
-    src: "bin/loading.sh",
+    src: "system/bin/loading.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "para.sh",
-    src: "bin/para.sh",
+    src: "system/bin/para.sh",
     vendor: true,
 }
 
 sh_binary {
     name: "total.sh",
-    src: "bin/total.sh",
+    src: "system/bin/total.sh",
     vendor: true,
 }
 
 // Init configuration files
 prebuilt_etc {
     name: "init.P682LPN.rc",
-    src: "etc/init.P682LPN.rc",
+    src: "system/etc/init.P682LPN.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
     name: "init.P682LPN.usb.rc",
-    src: "etc/init.P682LPN.usb.rc",
+    src: "system/etc/init.P682LPN.usb.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
     name: "init.cali.rc",
-    src: "etc/init.cali.rc",
+    src: "system/etc/init.cali.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
     name: "init.factorytest.rc",
-    src: "etc/init.factorytest.rc",
+    src: "system/etc/init.factorytest.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
     name: "init.ram.rc",
-    src: "etc/init.ram.rc",
+    src: "system/etc/init.ram.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
     name: "init.stnfc.rc",
-    src: "etc/init.stnfc.rc",
+    src: "system/etc/init.stnfc.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
 
 prebuilt_etc {
     name: "init.storage.rc",
-    src: "etc/init.storage.rc",
+    src: "system/etc/init.storage.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
 // fstab
 prebuilt_etc {
     name: "recovery.fstab",
-    src: "etc/recovery.fstab",
+    src: "system/etc/recovery.fstab",
     vendor: true,
 }
