@@ -12,9 +12,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2-impl \
-    android.hardware.boot@1.2-impl.recovery \
-    android.hardware.boot@1.2-service
+    android.hardware.boot@1.1-impl \
+    android.hardware.boot@1.1-impl.recovery \
+    android.hardware.boot@1.1-service
 
 PRODUCT_PACKAGES += \
     update_engine \
@@ -27,8 +27,16 @@ PRODUCT_PACKAGES += \
 
 # libhealthd
 PRODUCT_PACKAGES += \
-    libhealthd.ums9230 \
+    libhealthd.recovery \
     libhealthd
+
+# Camera
+PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-service
+
+# DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.3-service.clearkey
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -36,6 +44,8 @@ PRODUCT_PACKAGES += \
     android.hidl.allocator@1.0 \
     android.hidl.base@1.0.vendor \
     android.hidl.allocator@1.0.vendor \
+    libbinderwrapper \
+    libbinderwrapper.vendor \
     libhidltransport \
     libhidltransport.vendor \
     libhwbinder \
@@ -44,14 +54,19 @@ PRODUCT_PACKAGES += \
 # API levels
 PRODUCT_SHIPPING_API_LEVEL := 30
 PRODUCT_TARGET_VNDK_VERSION := 30
+
 # vndk
 PRODUCT_PACKAGES +=\
     vndk_package
 
 # fastbootd
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.1-impl-mock \
+    android.hardware.fastboot@1.0-impl-mock \
     fastbootd
+
+# Bootctrl
+PRODUCT_PACKAGES += \
+    bootctrl.default
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
@@ -100,19 +115,53 @@ PRODUCT_PACKAGES += \
     vibrator.default \
     power.default
 
+# Power stats
+PRODUCT_PACKAGES += \
+    android.hardware.power.stats@1.0-service.mock
+
 # sensor
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-service \
     android.hardware.sensors@1.0-impl
+
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.1-service
 
 # Vibrator HAL
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-service \
     android.hardware.vibrator@1.0-impl
 
+# Rebootescrow
+PRODUCT_PACKAGES += \
+    android.hardware.rebootescrow-service.default
+
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@2.0-service.mock
+
+# WiFi
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service
+
+# OMX
+PRODUCT_PACKAGES += \
+    android.hardware.media.omx@1.0-service
+
+# Gnss
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@2.1-service
+
+# Memtrack
+PRODUCT_PACKAGES += \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service
+
 #audio hidl hal impl
 PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl \
+    android.hardware.bluetooth.audio@2.0-impl \
     android.hardware.audio.effect@5.0-impl \
     android.hardware.broadcastradio@1.0-impl \
     android.hardware.soundtrigger@2.0-impl \
