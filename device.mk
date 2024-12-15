@@ -36,6 +36,7 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
+    libdrm \
     android.hardware.drm@1.3-service.clearkey
 
 # HIDL
