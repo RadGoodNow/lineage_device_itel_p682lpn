@@ -153,4 +153,4 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 BOARD_ROOT_EXTRA_FOLDERS += metadata socko odmko 
 
 # Inherit the proprietary files
-include vendor/itel/P682LPN/BoardConfigVendor.mk
+#include vendor/itel/P682LPN/BoardConfigVendor.mk
